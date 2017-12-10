@@ -74,7 +74,15 @@ def mergesort(A,l,r):
 
 #Quicksort - O(n*log n)
 #In worst case of already sorted time complexity becomes O(n^2)
-    
+
+import random
+
+def randomize(l):       #To avoid worst case of already sorted
+    for i in range(len(l)//2):
+        j=random.randrange(0,len(l),1)
+        k=random.randrange(0,len(l),1)
+        (l[j],l[k])=(l[k],l[j])
+
 def quicksort(A,l,r):
     if r-l<=1:
         return
